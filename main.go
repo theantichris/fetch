@@ -5,10 +5,17 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strings"
 )
+
+const httpPrefix = "http://"
 
 func main() {
 	for _, url := range os.Args[1:] {
+		if !strings.HasPrefix(url, httpPrefix) {
+			url = httpPrefix + url
+		}
+
 		response, err := http.Get(url)
 
 		if err != nil {
