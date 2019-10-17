@@ -23,6 +23,7 @@ func main() {
 			os.Exit(1)
 		}
 
+		fmt.Printf("status: %s\n", response.Status)
 		_, err = io.Copy(os.Stdout, response.Body)
 		response.Body.Close()
 
