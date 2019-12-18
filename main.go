@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-const httpPrefix = "http://"
+const httpPrefix = "https://"
 
 func main() {
 	for _, url := range os.Args[1:] {
